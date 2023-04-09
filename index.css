@@ -1,0 +1,80 @@
+body {
+    background: #283033;
+}
+
+.hero {
+    text-align: center;
+}
+
+.pager-section {
+    margin: 30px;
+    outline: 5px solid rgb(38, 0, 255);
+    background-color: #73a7b9;
+}
+
+#pager-output { /*doesn't work ?? */
+    background-color: #080808;
+    outline: 1px solid red;
+    color: wheat;
+
+}
+
+.phone-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    outline: 2px solid red;
+    background-color: #83adc4;
+    margin: 30px;
+    padding: 0px;
+    
+}
+
+.phone-title {
+    outline: 1px solid red;
+    margin-top: 0px; /*doesn't work ?? */
+    margin-bottom: 0px;
+    padding: 0%;
+}
+
+#phone-output {
+    background: #4b5563;
+    width: 248px;
+    margin: 5px 0px;
+    color: white;
+    font-size: 40px;
+    padding: 0px;
+}
+
+button {
+    font-size: x-large;
+    width: 80px;
+    margin: 2px 0px 2px 0px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #4b5563;
+    color: white;
+}
+
+#reset-btn {
+    width: 248px;
+    background-color: #9f1239;
+    margin-bottom: 5px;
+}
+
+#reset-btn:hover {
+    background-color: #eb1a54;
+}
+
+#send-btn {
+    width: 248px;
+    
+    background-color: #064e3b;
+}
+
+#send-btn:hover {
+    background-color: #0b9a74;
+}
