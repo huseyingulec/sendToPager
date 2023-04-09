@@ -1,5 +1,5 @@
 # Send to pager project
-Pager is a small device that receives and displays numbers. In early 1950s, pager used to help people when somebody called them, it basically shows the calling people's number.
+Pager is a small device that receives and displays numbers. In early 1950s, pager used to help people when somebody called them, it basically shows the calling people's number. Then people can understand that somebody was called them and they were going to the nearest phone to call back.
 
 ## Live-demo -> https://sendtopager.netlify.app/
 
