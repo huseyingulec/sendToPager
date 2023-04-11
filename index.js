@@ -47,6 +47,7 @@ function back() { // deletes the latest element of myInput string
 
 resetBtn.addEventListener("dblclick", function() { 
     window.confirm("Do you really want to delete all?")// shows a confirm windows to delete both outputs
+    myInput = "" // cleans the phone output screen
     phoneOutput.innerHTML = "" // when confirmed, cleans all outputs and local storage
     pagerOutput.innerHTML = ""
     localStorage.clear()
