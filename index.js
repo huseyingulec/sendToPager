@@ -1,25 +1,20 @@
-const btn1 = document.getElementById("btn1")
-const btn2 = document.getElementById("btn2")
-const btn3 = document.getElementById("btn3")
-const btn4 = document.getElementById("btn4")
-const btn5 = document.getElementById("btn5")
-const btn6 = document.getElementById("btn6")
-const btn7 = document.getElementById("btn7")
-const btn8 = document.getElementById("btn8")
-const btn9 = document.getElementById("btn9")
-const starBtn = document.getElementById("btn*")
-const btn0 = document.getElementById("btn0")
-const hashtagBtn = document.getElementById("btn#")
 const resetBtn = document.getElementById("reset-btn")
 const sendBtn = document.getElementById("send-btn")
 const pagerOutput = document.getElementById("pager-output")
 const phoneOutput = document.getElementById("phone-output")
-
 const pagerFromLocalStorage = JSON.parse(localStorage.getItem("myPager") )
 
 let myPager = [] // to store our pager numbers to the local storage
-
 let myInput = "" // to store our input numbers 
+
+
+document.addEventListener('click', event => {
+    if (event.target.dataset.btn !== undefined) {
+        if (event.target.dataset.btn == "send") {
+        send() } 
+        else {
+            click( event.target.dataset.btn )
+        }    }     })
 
 if(pagerFromLocalStorage) { // if there is a data in the local storage, executes the function
     myPager = pagerFromLocalStorage // gets the data to the array from local storage
@@ -27,60 +22,19 @@ if(pagerFromLocalStorage) { // if there is a data in the local storage, executes
     pagerOutput.innerHTML = latestPager // passes the latest pager to the pager output section
 }
 
-btn1.addEventListener("click", function(){ // when clicks numbers, it calls the click function
-    click(1)
-})
-btn2.addEventListener("click", function(){
-    click(2)
-})
-btn3.addEventListener("click", function(){
-    click(3)
-})
-btn4.addEventListener("click", function(){
-    click(4)
-})
-btn5.addEventListener("click", function(){
-    click(5)
-})
-btn6.addEventListener("click", function(){
-    click(6)
-})
-btn7.addEventListener("click", function(){
-    click(7)
-})
-btn8.addEventListener("click", function(){
-    click(8)
-})
-btn9.addEventListener("click", function(){
-    click(9)
-})
-starBtn.addEventListener("click", function(){
-    click("*")
-})
-btn0.addEventListener("click", function(){
-    click(0)
-})
-hashtagBtn.addEventListener("click", function(){
-    click("#")
-})
-
-
-
 function click(button) { // when called, adds the clicked button's number to the output
     myInput += button
     phoneOutput.innerHTML = myInput
 
 }
 
-
-sendBtn.addEventListener("click", function(){ // when clicked, executes the function
-    
+function send() { // sends the inputs to the pager
     pagerOutput.innerHTML = myInput // passes the inputs from phone to pager
     myPager.push(myInput) // saves inputs to the array
     localStorage.setItem("myPager", JSON.stringify(myPager)) // saves inputs to the localstorage
-    reset() // cleans the phone output field
-})
-
+    myInput = ""
+    phoneOutput.innerHTML = "" // deletes only phone output // cleans the phone output field
+}
 
 let clicks = 0
 
@@ -88,7 +42,8 @@ resetBtn.addEventListener("click", function() { // counts the clicks and execute
   clicks++;
   setTimeout(function() {
     if (clicks === 1) {
-       reset()
+        myInput = ""
+        phoneOutput.innerHTML = "" // deletes only phone output
 
 
     } else if (clicks === 2 && window.confirm("Do you really want to delete all?")) { // shows a confirm windows to delete both outputs
@@ -100,11 +55,4 @@ resetBtn.addEventListener("click", function() { // counts the clicks and execute
     clicks = 0;
   }, 300); // Delay between clicks
 });
-
-function reset() {
-    myInput = ""
-    phoneOutput.innerHTML = "" // deletes only phone output
-
-}
-
-
+    

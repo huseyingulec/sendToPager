@@ -8,14 +8,16 @@ body {
 
 .pager-section {
     margin: 30px;
-    outline: 5px solid rgb(38, 0, 255);
-    background-color: #73a7b9;
+    background-color: #1d8baf;
 }
 
 #pager-output { /*doesn't work ?? */
     background-color: #080808;
     outline: 1px solid red;
     color: wheat;
+    height: 40px;
+    font-size: 40px;
+    margin: px;
 
 }
 
@@ -24,7 +26,7 @@ body {
     flex-direction: column;
     align-items: center;
     outline: 2px solid red;
-    background-color: #83adc4;
+    background-color: #6591a8;
     margin: 30px;
     padding: 0px;
     
@@ -32,9 +34,7 @@ body {
 
 .phone-title {
     outline: 1px solid red;
-    margin-top: 0px; /*doesn't work ?? */
-    margin-bottom: 0px;
-    padding: 0%;
+    padding: 10px 0;
 }
 
 #phone-output {
@@ -44,6 +44,7 @@ body {
     color: white;
     font-size: 40px;
     padding: 0px;
+    height: 40px;
 }
 
 button {
@@ -62,7 +63,7 @@ button:hover {
 #reset-btn {
     width: 248px;
     background-color: #9f1239;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 #reset-btn:hover {
