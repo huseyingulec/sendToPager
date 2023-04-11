@@ -8,16 +8,21 @@ body {
 
 .pager-section {
     margin: 30px;
-    background-color: #1d8baf;
+    background-color: #73a7b9;
 }
 
-#pager-output { /*doesn't work ?? */
+.pager-title {
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+#pager-output { 
     background-color: #080808;
-    outline: 1px solid red;
-    color: wheat;
+    color: white;
     height: 40px;
     font-size: 40px;
-    margin: px;
+    margin: 0px 10px;
+    border-radius: 5px;
 
 }
 
@@ -25,26 +30,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    outline: 2px solid red;
-    background-color: #6591a8;
+    background-color: #83adc4;
     margin: 30px;
     padding: 0px;
     
 }
 
 .phone-title {
-    outline: 1px solid red;
-    padding: 10px 0;
+    margin: 0;
+    padding: 0;
 }
 
 #phone-output {
     background: #4b5563;
     width: 248px;
-    margin: 5px 0px;
+    margin-bottom: 5px;
     color: white;
     font-size: 40px;
     padding: 0px;
     height: 40px;
+    border-radius: 5px;
+    
 }
 
 button {
@@ -63,7 +69,7 @@ button:hover {
 #reset-btn {
     width: 248px;
     background-color: #9f1239;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 #reset-btn:hover {
