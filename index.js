@@ -7,14 +7,15 @@ const pagerFromLocalStorage = JSON.parse(localStorage.getItem("myPager") )
 let myPager = [] // to store our pager numbers to the local storage
 let myInput = "" // to store our input numbers 
 
-
 document.addEventListener('click', event => {
     if (event.target.dataset.btn !== undefined) {
         if (event.target.dataset.btn == "send") {
-        send() } 
+        send() }
+        else if (event.target.dataset.btn == "back"){
+            back()  }
         else {
             click( event.target.dataset.btn )
-        }    }     })
+        } } } )
 
 if(pagerFromLocalStorage) { // if there is a data in the local storage, executes the function
     myPager = pagerFromLocalStorage // gets the data to the array from local storage
@@ -23,10 +24,10 @@ if(pagerFromLocalStorage) { // if there is a data in the local storage, executes
 }
 
 function click(button) { // when called, adds the clicked button's number to the output
-    myInput += button
-    phoneOutput.innerHTML = myInput
-
-}
+    if (myInput.length <= 11) {
+        myInput += button
+        phoneOutput.innerHTML = myInput
+}}
 
 function send() { // sends the inputs to the pager
     pagerOutput.innerHTML = myInput // passes the inputs from phone to pager
@@ -36,23 +37,18 @@ function send() { // sends the inputs to the pager
     phoneOutput.innerHTML = "" // deletes only phone output // cleans the phone output field
 }
 
-let clicks = 0
-
-resetBtn.addEventListener("click", function() { // counts the clicks and execute different functions
-  clicks++;
-  setTimeout(function() {
-    if (clicks === 1) {
-        myInput = ""
-        phoneOutput.innerHTML = "" // deletes only phone output
+function back() { // deletes the latest element of myInput string
+    if (myInput.length >= 1) {
+        myInput = myInput.slice(0, -1) 
+        phoneOutput.innerHTML = myInput
+    }  
+}
 
 
-    } else if (clicks === 2 && window.confirm("Do you really want to delete all?")) { // shows a confirm windows to delete both outputs
-        phoneOutput.innerHTML = "" // when confirmed, cleans all outputs and local storage
-        pagerOutput.innerHTML = ""
-        localStorage.clear()
-        myPager = []
-    }
-    clicks = 0;
-  }, 300); // Delay between clicks
-});
-    
+resetBtn.addEventListener("dblclick", function() { 
+    window.confirm("Do you really want to delete all?")// shows a confirm windows to delete both outputs
+    phoneOutput.innerHTML = "" // when confirmed, cleans all outputs and local storage
+    pagerOutput.innerHTML = ""
+    localStorage.clear()
+    myPager = []
+})
