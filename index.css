@@ -9,11 +9,11 @@ body {
 .pager-section {
     margin: 30px;
     background-color: #73a7b9;
+    padding: 8px;
 }
 
 .pager-title {
-    margin-bottom: 0px;
-    padding: 0px;
+    margin: 0px;
 }
 
 #pager-output { 
@@ -21,8 +21,9 @@ body {
     color: white;
     height: 40px;
     font-size: 40px;
-    margin: 0px 10px;
+    margin: 10px;
     border-radius: 5px;
+    
 
 }
 
@@ -38,7 +39,7 @@ body {
 
 .phone-title {
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 #phone-output {
@@ -50,7 +51,7 @@ body {
     padding: 0px;
     height: 40px;
     border-radius: 5px;
-    
+
 }
 
 button {
@@ -77,8 +78,7 @@ button:hover {
 }
 
 #send-btn {
-    width: 248px;
-    
+    width: 164px;
     background-color: #064e3b;
 }
 
